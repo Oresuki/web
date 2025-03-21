@@ -50,6 +50,10 @@
             width: 30px;
             height: 30px;
             border-radius: 50%;
+            cursor: pointer;
+        }
+        .social-links img:active {
+            transform: scale(0.9);
         }
     </style>
 </head>
@@ -59,17 +63,22 @@
         Browser Anda tidak mendukung elemen video.
     </video>
     <div class="content">
-        <h1>Link:</h1>
-        <p>WhatsApp.</p>
+        <h1>Selamat Datang!</h1>
+        <p>Klik tombol di bawah untuk menghubungi saya di WhatsApp.</p>
         <a href="https://wa.me/6281400788258" class="button">Hubungi WhatsApp</a>
         <div class="social-links">
-            <a href="https://www.instagram.com/tjmmar" target="_blank">
-                <img src="instagram-icon.png" alt="Instagram">
+            <a href="https://www.instagram.com/tjmmar" target="_blank" onclick="buttonClicked('Instagram')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
             </a>
-            <a href="https://discord.com/invite/XS7tFxjkNd" target="_blank">
-                <img src="discord-icon.png" alt="Discord">
+            <a href="https://discord.com/invite/XS7tFxjkNd" target="_blank" onclick="buttonClicked('Discord')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_icon.svg" alt="Discord">
             </a>
         </div>
     </div>
+    <script>
+        function buttonClicked(platform) {
+            alert(platform + " button clicked!");
+        }
+    </script>
 </body>
 </html>
