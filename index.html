@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman HTML dengan Video Latar Belakang</title>
     <style>
         body, html {
@@ -38,6 +40,17 @@
         .button:hover {
             background-color: #20b857;
         }
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links a {
+            margin: 0 10px;
+        }
+        .social-links img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
@@ -49,13 +62,14 @@
         <h1>Selamat Datang!</h1>
         <p>Klik tombol di bawah untuk menghubungi saya di WhatsApp.</p>
         <a href="https://wa.me/6281400788258" class="button">Hubungi WhatsApp</a>
+        <div class="social-links">
+            <a href="https://www.instagram.com/tjmmar" target="_blank">
+                <img src="instagram-icon.png" alt="Instagram">
+            </a>
+            <a href="https://discord.com/invite/XS7tFxjkNd" target="_blank">
+                <img src="discord-icon.png" alt="Discord">
+            </a>
+        </div>
     </div>
-    <a href="https://www.instagram.com/tjmmar" target="_blank">
-  <img src="instagram-icon.png" alt="Instagram" width="30">
-</a>
-<a href="https://discord.com/invite/XS7tFxjkNd" target="_blank">
-  <img src="discord-icon.png" alt="Discord" width="30">
-</a>
-
 </body>
 </html>
