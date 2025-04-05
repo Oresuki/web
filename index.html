@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website dengan Musik dan Transisi Variant (Mobile Friendly)</title>
+  <title>Website dengan Musik dan Variant untuk HP</title>
   <style>
     /* Reset dasar dan atur tinggi penuh untuk desktop */
     html, body {
       margin: 0;
       padding: 0;
-      overflow: hidden; /* Untuk desktop, background full screen */
+      overflow: hidden; /* Tidak ada scroll untuk desktop */
       height: 100%;
     }
-    /* Video background full screen */
+    /* Background video full screen */
     video.background {
       position: absolute;
       top: 0;
@@ -91,7 +91,7 @@
       gap: 50px;
       margin-top: 50px;
     }
-    /* Setiap variant ditempatkan secara vertikal dengan transisi */
+    /* Setiap variant ditata secara vertikal dalam box dengan transisi */
     .variant {
       display: flex;
       flex-direction: column;
@@ -110,7 +110,7 @@
     /* Wrapper untuk video variant */
     .video-wrapper {
       width: 100%;
-      height: 300px;  /* Sesuaikan tinggi sesuai kebutuhan */
+      height: 300px;  /* Ukuran untuk desktop */
       overflow: hidden;
     }
     .video-wrapper video {
@@ -118,36 +118,54 @@
       height: 100%;
       object-fit: cover;
     }
-    /* Media Query untuk tampilan mobile */
+    
+    /* ----------------------------
+       MEDIA QUERY UNTUK MOBILE
+       Tampilan tanpa scroll, variant terlihat seluruhnya
+    ----------------------------- */
     @media only screen and (max-width: 768px) {
-      /* Izinkan halaman bisa discroll secara vertikal guna menampilkan seluruh variant */
+      /* Pastikan tidak ada scroll */
       html, body {
-        overflow-y: auto;
+        overflow: hidden;
+        height: 100%;
       }
+      
+      /* Mengurangi padding dan ukuran teks di konten utama */
       .content {
-        padding-top: 30%;
+        padding-top: 10%;
       }
       .content h1 {
-        font-size: 32px;
+        font-size: 28px;
+        margin-bottom: 10px;
       }
       .content p {
-        font-size: 18px;
+        font-size: 16px;
+        margin-bottom: 10px;
       }
+      
+      /* Pindahkan container variant agar fixed di bagian bawah layar */
       .variant-container {
-        flex-direction: column;
-        gap: 20px;
-        margin-top: 30px;
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: row;
+        gap: 5px;
+        width: 95%;
+        justify-content: space-around;
+        margin: 0;
       }
+      /* Variant box lebih kecil agar muat dalam layar mobile */
       .variant {
-        width: 90%;
-        border-width: 10px;
+        width: 30%;
+        border-width: 5px;
       }
       .video-wrapper {
-        height: 200px;
+        height: 80px; /* Menyesuaikan tinggi agar semua variant terlihat */
       }
       .button {
-        font-size: 14px;
-        padding: 10px 0;
+        font-size: 10px;
+        padding: 5px 0;
       }
     }
   </style>
