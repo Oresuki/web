@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Gabut </title>
   <style>
-    /* Reset dasar dan atur tinggi penuh untuk desktop */
+
     html, body {
       margin: 0;
       padding: 0;
-      overflow: hidden; /* Tidak ada scroll untuk desktop */
+      overflow: hidden; 
       height: 100%;
     }
-    /* Background video full screen */
+
     video.background {
       position: absolute;
       top: 0;
@@ -22,7 +22,7 @@
       object-fit: cover;
       z-index: -1;
     }
-    /* Kontrol Audio di pojok kanan atas */
+   
     #audio-container {
       position: absolute;
       top: 10px;
@@ -34,7 +34,7 @@
       font-size: 14px;
       cursor: pointer;
     }
-    /* Overlay Konten Utama */
+ 
     .content {
       position: relative;
       z-index: 1;
@@ -52,7 +52,7 @@
       font-size: 24px;
       margin-bottom: 30px;
     }
-    /* Styling tombol umum (dengan transisi all) */
+    
     .button {
       display: block;
       width: 100%;
@@ -84,14 +84,14 @@
     .discord:hover {
       background-color: #5b6eae;
     }
-    /* Container Variant Videos untuk desktop */
+
     .variant-container {
       display: flex;
       justify-content: center;
       gap: 50px;
       margin-top: 50px;
     }
-    /* Setiap variant ditata secara vertikal dalam box dengan transisi */
+
     .variant {
       display: flex;
       flex-direction: column;
@@ -107,10 +107,10 @@
       transform: scale(1.05);
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
     }
-    /* Wrapper untuk video variant */
+  
     .video-wrapper {
       width: 100%;
-      height: 300px;  /* Ukuran untuk desktop */
+      height: 300px;  
       overflow: hidden;
     }
     .video-wrapper video {
@@ -118,19 +118,15 @@
       height: 100%;
       object-fit: cover;
     }
-    
-    /* ----------------------------
-       MEDIA QUERY UNTUK MOBILE
-       Tampilan tanpa scroll, variant terlihat seluruhnya
-    ----------------------------- */
+
     @media only screen and (max-width: 768px) {
-      /* Pastikan tidak ada scroll */
+    
       html, body {
         overflow: hidden;
         height: 100%;
       }
       
-      /* Mengurangi padding dan ukuran teks di konten utama */
+
       .content {
         padding-top: 10%;
       }
@@ -143,7 +139,6 @@
         margin-bottom: 10px;
       }
       
-      /* Pindahkan container variant agar fixed di bagian bawah layar */
       .variant-container {
         position: fixed;
         bottom: 10px;
@@ -155,13 +150,12 @@
         justify-content: space-around;
         margin: 0;
       }
-      /* Variant box lebih kecil agar muat dalam layar mobile */
       .variant {
         width: 30%;
         border-width: 5px;
       }
       .video-wrapper {
-        height: 80px; /* Menyesuaikan tinggi agar semua variant terlihat */
+        height: 80px; 
       }
       .button {
         font-size: 10px;
@@ -171,13 +165,13 @@
   </style>
 </head>
 <body>
-  <!-- Background Video -->
+
   <video class="background" autoplay muted loop>
     <source src="sunset.mp4" type="video/mp4">
     Browser Anda tidak mendukung elemen video.
   </video>
 
-  <!-- Kontrol Audio -->
+
   <div id="audio-container">
     <audio id="background-audio" loop>
       <source src="sunset.mp3" type="audio/mpeg">
@@ -186,13 +180,12 @@
     <button onclick="playAudio()">Putar Musik</button>
   </div>
 
-  <!-- Konten Utama -->
+
   <div class="content">
     <h1>Selamat Datang!</h1>
     <p>Link Medsos:</p>
-    <!-- Container Variant Videos -->
     <div class="variant-container">
-      <!-- Variant WhatsApp -->
+     
       <div class="variant">
         <div class="video-wrapper">
           <video autoplay muted loop>
@@ -202,7 +195,7 @@
         </div>
         <a href="https://wa.me/6281400788258" class="button whatsapp">WhatsApp</a>
       </div>
-      <!-- Variant Instagram -->
+     
       <div class="variant">
         <div class="video-wrapper">
           <video autoplay muted loop>
@@ -212,7 +205,7 @@
         </div>
         <a href="https://www.instagram.com/tjmmar" class="button instagram">Instagram</a>
       </div>
-      <!-- Variant Discord -->
+     
       <div class="variant">
         <div class="video-wrapper">
           <video autoplay muted loop>
@@ -226,7 +219,6 @@
   </div>
 
   <script>
-    // Fungsi untuk memutar audio
     function playAudio() {
       const audio = document.getElementById('background-audio');
       audio.play();
