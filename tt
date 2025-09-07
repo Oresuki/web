@@ -1,2 +1,2 @@
-7965-8d26-9abd-b1ff
-https://krnl.cat/checkpoint/android/v1?hwid=de47d5659b97418951e88fbbadc396e6063a1d92ef01286b4ce5931c77888958dfae3a8da7ce919d9f7ff634baab647c
+script_key="wGBzFblGHVMDWuepCuxXExSyLlaCVMJQ";
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
